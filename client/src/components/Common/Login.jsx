@@ -36,7 +36,7 @@ function Login() {
         <div className={styles.loginBody}>
             <div className={styles.loginMainDiv}>
                 <div className={styles.loginMainDivTitle}>
-                    Welcome to SSD-Secure
+                    Welcome to Messenger
                 </div>
                 <div className={styles.loginMainDivInputs}>
                     Login to continue
