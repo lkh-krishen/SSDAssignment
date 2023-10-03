@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.uploadDiv {
+    display: flex;
+    flex: 1;
+    padding: 2rem;
+    flex-direction: column;
+    background-color: antiquewhite;
+    gap: 1rem;
+}
+
+.uploadDivText {
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-family: 'Lato';
+}
+
+.fileNameRow {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.fileNameInput {
+    width: 60%;
+    height: 2rem;
+}
+
+.fileSelectRow {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.uploadBtn {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.messagesDiv {
+    flex: 1;
+    padding: 1rem;
+    display: flex; 
+    flex-direction: column; 
+}

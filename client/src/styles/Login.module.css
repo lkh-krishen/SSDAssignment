@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+
+.loginBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.loginMainDiv {
+    display: flex;
+    flex-direction: column;
+    background-color: #F0F0F0;
+    height: 70%;
+    width: 50%;
+    margin-top: 2rem;
+    border-radius: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.loginMainDivTitle {
+    font-size: 28px;
+    font-family: 'Lato';
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.loginMainDivInputs {
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 20px;
+    font-style: italic;
+}
+
+button {
+    width: 40%;
+    height: 2rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
