@@ -64,16 +64,16 @@ function Manager() {
       fileName: fName,
       fileUrl: fUrl,
     };
-    console.log(postData);
+
     try {
       const res = await axios.post(baseUrl + `/file/add`, postData, {
         headers: {
           Authorization: "Bearer " + token,
         },
       });
-      console.log(res);
+
     } catch (err) {
-      console.log(err);
+
     }
   };
 
@@ -99,11 +99,9 @@ function Manager() {
           setProgress(prog);
         },
         (err) => {
-          console.log(err);
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-            console.log(file.name + url);
             addFileInfo(file.name, url);
             alert("Uploaded");
             setLoading(false);
@@ -126,6 +124,12 @@ function Manager() {
     setInputMessage("");
     await getMessages();
   };
+
+  function sanitizeHTML(html) {
+    // Use a library like DOMPurify to sanitize the HTML
+    const DOMPurify = require('dompurify');
+    return DOMPurify.sanitize(html);
+  }
 
   const ButtonStyle = { margin: "10px 10px" };
   return (
@@ -176,6 +180,7 @@ function Manager() {
               <input
                 style={{ flex: "4" }}
                 type="text"
+                placeholder="Only input letters and spaces, any other character will be removed."
                 onChange={(e) => {
                   const inputValue = e.target.value;
                   const sanitizedInput = inputValue.replace(/[^a-zA-Z\s]/g, "");
@@ -192,7 +197,7 @@ function Manager() {
                 <Message
                   key={message._id}
                   style={{ width: "100% !important" }}
-                  message={message.messageContent}
+                  message={sanitizeHTML(message.messageContent)}
                   isSaved={isSaved}
                   msgId={message._id}
                 />

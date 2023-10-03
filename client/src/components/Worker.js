@@ -29,7 +29,6 @@ function Worker() {
 
   const getMessages = async () => {
     const token = await getAccessTokenSilently();
-    console.log(token)
     const response = await axios.get(baseUrl + "/messages/", {
       headers: {
         Authorization: "Bearer " + token,
@@ -51,7 +50,7 @@ function Worker() {
   function sanitizeHTML(html) {
     // Use a library like DOMPurify to sanitize the HTML
     const DOMPurify = require('dompurify');
-    return { __html: DOMPurify.sanitize(html) };
+    return DOMPurify.sanitize(html);
   }
 
   return isWorker ? (

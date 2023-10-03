@@ -9,7 +9,7 @@ import baseUrl from "../config/baseUrl";
 function Message({ message, isSaved, msgId }) {
   const [messageSaved, setMessageSaved] = useState(false);
   const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
-  
+
   useEffect(() => {
     setMessageSaved(isSaved);
   }, [isSaved]);
@@ -29,7 +29,6 @@ function Message({ message, isSaved, msgId }) {
         .then((response) => {
         })
         .catch((error) => {
-          console.log(error);
         });
     } else {
       axios
@@ -41,7 +40,6 @@ function Message({ message, isSaved, msgId }) {
         .then((response) => {
         })
         .catch((error) => {
-          console.log(error);
         });
     }
   };
